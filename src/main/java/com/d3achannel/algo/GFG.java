@@ -1,60 +1,43 @@
 package com.d3achannel.algo;
 
-public class GFG
-{ 
-	  
+public class GFG {
 
-	    static boolean findSplit(int []arr) 
-	    { 
-	    	int n = arr.length;
-	        int i; 
+	public static int canThreePartsEqualSum(int[] A) {
+		int noofsubsets = 3;
+		int partSum = 0;
+		int sum = 0;
+		for (int i : A) {
+			sum += i;
+		}
+		if (sum % noofsubsets == 0) {
+			partSum = sum / noofsubsets;
+			return find(A, partSum, A.length - 1);
+		} else {
+			return 0;
+		}
 
-	        int preSum = 0; 
-	        
-	        int ind1 = -1, ind2 = -1; 
-	        
-	        int S; 
-	       
-	        S = arr[0]; 
-	        for (i = 1; i < n; i++)  
-	            S += arr[i]; 
- 
-	        if(S % 3 != 0) 
-	            return false; 
+	}
 
-	        int S1 = S / 3; 
-	        int S2 = 2 * S1; 
-	       
-	        for (i = 0; i < n; i++) 
-	        { 
-	            preSum += arr[i]; 
+	public static int find(int[] A, int total, int i) {
+		if (A.length == 0)
+			return 0;
+		else if (total < 0)
+			return 0;
+		else if (i < 0)
+			return 0;
+		else if (total < A[i]) {
+			return find(A, total, i - 1);
+		} else {
 
-	            if (preSum % S1 == 0 && ind1 == -1) 
-	                ind1 = i; 
-	               
-	            else if(preSum % S2 == 0) 
-	            { 
-	                ind2 = i; 
+			return find(A, total - A[i], i - 1) + find(A, total, i - 1);
+		}
+	}
 
-	                break; 
-	            } 
-	        } 
- 
-	        if (ind1 != -1 && ind2 != -1) 
-	        { 
-	            return true; 
-	        } 
- 
-	        return false; 
-	    } 
-	       
+	public static void main(String args[]) {
+		
+		int[] arr = { 0, 2, 1, -6, 6, -7, 9, 1, 2, 0, 1 };
 
-	    public static void main(String args[]) 
-	    { 
-	        int []arr = { 0,2,1,-6,6,-7,9,1,2,0,1 }; 
-	        int n = arr.length; 
+		System.out.print(canThreePartsEqualSum(arr));
 
-	            System.out.print(findSplit(arr)); 
-	     
-	    } 
-	} 
+	}
+}
