@@ -6,7 +6,7 @@ public class UniqueEmails
 {
 	public int numUniqueEmails(String[] emails) 
 	{
-		HashSet<String> uniqueEmails = new HashSet<>();
+		HashSet<String> uniqueEmails = new HashSet<String>();
 		
 		for (String email : emails) 
 		{
