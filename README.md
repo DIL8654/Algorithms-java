@@ -82,3 +82,10 @@ Given an array of integers, find the first missing positive integer in linear ti
 For example, the input [3, 4, -1, 1] should give 2. The input [1, 2, 0] should give 3.
 
 You can modify the input array in-place.
+
+#EightHouses Colony problem
+A colony of eight houses, represented as cells, are arranged in a straight line. Each day every cell competes with its adjacent cells (neighbours).
+ An integer value of 1 represents an active cell and value of 0 represents an inactive cell. If both the neighbours are either active or inactive,
+ the cell becomes inactive the next day; otherwise it becomes active on the next day. The two cells on the ends have a single adjacent cell,
+ so the other adjacent cell can be assumed to be always inactive. Even after updating the cell state, its previous state is considered for updating the state of other cells.
+  The cell information of all cells should be updated simultaneously.
