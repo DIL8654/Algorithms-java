@@ -89,3 +89,7 @@ A colony of eight houses, represented as cells, are arranged in a straight line.
  the cell becomes inactive the next day; otherwise it becomes active on the next day. The two cells on the ends have a single adjacent cell,
  so the other adjacent cell can be assumed to be always inactive. Even after updating the cell state, its previous state is considered for updating the state of other cells.
   The cell information of all cells should be updated simultaneously.
+  
+  
+#Find the GCD (Great Common Devider)
+Find the GCD value of given number array.
